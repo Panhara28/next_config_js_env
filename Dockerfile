@@ -13,5 +13,7 @@ COPY . .
 # Building app
 RUN yarn build
 
+ARG SOME_ARG=${API_URL}
+RUN echo "ARGS is ${SOME_ARG}"
 # Running the app
 CMD [ "yarn", "start" ]
