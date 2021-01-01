@@ -19,7 +19,7 @@ module.exports = (phase) => {
     RESTURL_SPEAKERS: (() => {
       if (isDev) return 'http://localhost:4000/speakers'
       if (isProd) {
-        return 'https://www.siliconvalley-codecamp.com/rest/speakers/ps'
+        return process.env.API_URL
       }
       if (isStaging) return 'http://localhost:11639'
       return 'RESTURL_SPEAKERS:not (isDev,isProd && !isStaging,isProd && isStaging)'
